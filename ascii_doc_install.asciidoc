@@ -1,0 +1,111 @@
+deck.js Support for Asciidoc
+=============================
+:author: Victor Berchet + Gilles Taupenas 
+:description: 
+:revdate: 2012-03-23
+:revnumber: 0.1
+:deckjs_theme: neon
+:deckjs_transition: horizontal-slide
+:pygments:
+:pygments_style: native
+:scrollable:
+
+== Installing Asciidoc
+
+ * download the Asciidoc package http://sourceforge.net/projects/asciidoc/files/asciidoc/8.6.7/
+ * unzip / untar it
+...........................................
+$ tar -xzf asciidoc-8.6.7.tar.gz
+...........................................
+
+ * configure and install it
+...........................................
+$ cd asciidoc-8.6.7
+$ ./configure
+$ sudo make install
+$ sudo make docs
+...........................................
+
+In case, you need to uninstall the aliases, just make :
+...........................................
+$ sudo make uninstall
+...........................................
+
+
+== Adding the deck.js as a Asciidoc backend
+
+Deck.js is a robust HTML5 backend ready to talk to Asciidoc. To install it and get waouh slideshows like this one:
+
+ * download the package http://houqp.github.com/asciidoc-deckjs/
+ * directly where you had downloaded it, make the following command
+
+.............................
+$ asciidoc --backend install deckjs-1.2.zip
+............................
+(not necessary to be root...)
+
+In case it does not work, you can unzip the package directly inside ~/.asciidoc/backends/ by doing :
+.......................
+$ cp deckjs-1.2.zip ~/.asciidoc/backends/
+$ cd ~/.asciidoc/backends/
+$ mkdir deckjs
+$ unzip deckjs-1.2.zip
+$ rm deckjs-1.2.zip
+.......................
+
+
+== Source highlighting
+
+(optional but often useful for our jobs ;) )
+The GNU source-highlight package is great to have colorized syntax in code examples
+
+.......................
+$ sudo apt-get install source-highlight
+.......................
+
+(also 
+.......................
+$ sudo apt-get install python-pygments
+.......................
+but why??)
+
+== Now time to play with your new toy!
+
+ * Edit test.asciidoc
+ * Fill it with your 1st content, for example with what is below
+.......................
+deck.js Support for Asciidoc
+=============================
+
+== Here is my title
+
+Here I say hello
+
+.......................
+
+ * Launch the generation
+...............
+$ asciidoc -b deckjs test.asciidoc
+................
+
+== To go further
+Learn by the example a standard presentation
+
+ * sources: https://raw.github.com/houqp/asciidoc-deckjs/master/tutorial-slide.asciidoc
+ * generated: http://houqp.github.com/asciidoc-deckjs/tutorial-slide.html
+
+== Ressources
+ 
+Document template : https://raw.github.com/houqp/asciidoc-deckjs/master/example-template.asciidoc
+
+
+== Now?
+
+Have fun...
+
+
+== Did not like my prezzz?
+
+Be nice pliz, it was my first try with Asciidoc
+
+
