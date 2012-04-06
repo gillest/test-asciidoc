@@ -89,6 +89,7 @@ foreach( $_COOKIE as $name => $value )
 
 .......................
 
+== Now time to play with your new toy!
  * Launch the generation
 ...............
 $ asciidoc -b deckjs test.asciidoc
