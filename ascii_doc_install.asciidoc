@@ -76,10 +76,22 @@ but why??)
 .......................
 deck.js Support for Asciidoc
 =============================
-
 == Here is my title
-
 Here I say hello
+== Here is code
+Below, you should see highlighted PHP code and HTML (both!)
+[source,php,numbered]
+-------------------------------------------
+<html><head><title>ESI top page</title></head><body><h1>ESI Test page</h1>
+<?php echo "$now"; ?>
+<p>The top page received the following Cookies:</p><ul>
+
+<?php
+foreach( $_COOKIE as $name => $value )
+    print( "<li>${name} : ${value}</li>\n" );
+?>
+<table border="1"><tr><td><esi:include src="/esi-user.php" /></td></tr></table></body></html>
+-------------------------------------------
 
 .......................
 

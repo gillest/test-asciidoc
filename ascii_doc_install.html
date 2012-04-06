@@ -2481,10 +2481,22 @@ Fill it with your 1st content, for example with what is below
 <div class="content">
 <pre><tt>deck.js Support for Asciidoc
 =============================
-
 == Here is my title
+Here I say hello
+== Here is code
+Below, you should see highlighted PHP code and HTML (both!)
+[source,php,numbered]
+-------------------------------------------
+&lt;html&gt;&lt;head&gt;&lt;title&gt;ESI top page&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;h1&gt;ESI Test page&lt;/h1&gt;
+&lt;?php echo "$now"; ?&gt;
+&lt;p&gt;The top page received the following Cookies:&lt;/p&gt;&lt;ul&gt;
 
-Here I say hello</tt></pre>
+&lt;?php
+foreach( $_COOKIE as $name =&gt; $value )
+    print( "&lt;li&gt;${name} : ${value}&lt;/li&gt;\n" );
+?&gt;
+&lt;table border="1"&gt;&lt;tr&gt;&lt;td&gt;&lt;esi:include src="/esi-user.php" /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;
+-------------------------------------------</tt></pre>
 </div></div>
 <ul>
 <li>
